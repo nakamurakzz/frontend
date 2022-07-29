@@ -58,15 +58,21 @@ export const BookList = ({ books , setSelectedBook}: Props) => {
             ))}
           </table>
         </div>
-        <div className="w-[240px] h-[60px]">
-          <button onClick={()=>setIsEdit(!isEdit)}>
-            {!isEdit ? 
-              <EditButton /> : 
-              <div>
-                <NewPageButton />
-                <DoneButton />
-              </div>
-            }</button>
+        <div className="w-[240px] h-[60px] flex justify-end p-[10px]">
+          {!isEdit ? 
+            <div className="flex justify-right" onClick={()=>setIsEdit(!isEdit)}>
+              <EditButton />
+            </div>
+            : 
+            <table>
+              <tr>
+                <td><NewPageButton /></td>          
+                <td onClick={()=>setIsEdit(!isEdit)}>
+                  <DoneButton />
+                </td>
+              </tr>
+            </table>
+          }
         </div>
       </div>
     </>

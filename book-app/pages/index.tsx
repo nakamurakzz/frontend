@@ -20,6 +20,7 @@ const useBooks = () => {
       const res = await fetch("http://localhost:3000/content");
       const books = await res.json() as Book[];
       setBooks(books);
+      setSelectedBook(books[0]);
     }
     getBooks();    
   }, []);

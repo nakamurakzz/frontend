@@ -12,10 +12,10 @@ export const Contents = ({ book }: Props) => {
         {book && (
           <>
             <div className="mx-[30px]">
-              <h1>{book.title}</h1>
+              <h1>{book? book.title : ""}</h1>
             </div>
             <div className="mt-[20px] p-[30px] overflow-auto bg-white">
-              <p>{book.body}</p>
+              <p>{book? book.body : ""}</p>
             </div>
           </>
         )}
